@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function (event){
       
             movie1.appendChild(movieDetail);
       
+          // grabbing the button buy tickets created in innerHTML
             const buyTicketButton = document.querySelector('.btn');
             buyTicketButton.addEventListener('click', function (event) {
               event.preventDefault();
@@ -38,12 +39,13 @@ document.addEventListener('DOMContentLoaded', function (event){
           })
       }
       
-      const menuButton = document.getElementById('menu-opener')
+    // grabbing the button to open the movie menu
+    const menuButton = document.getElementById('menu-opener')
     menuButton.addEventListener('click', function (event){
-        event.preventDefault();
+    event.preventDefault();
 
         loadMovieMenu();
-        });
+   });
 
 
         // function to load the movies from the json database
@@ -71,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function (event){
               });
       
               filmMenu.appendChild(filmItem);
-            ;
           }
       })
     }
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function (event){
           <p>Description: ${film.description}</p>
           <button class="btn">Buy Tickets</button>
         `;
+        // grabbing the button buy tickets created using innerHTML
         let buyTicketButton = moviesDetail.querySelector('.btn');
         buyTicketButton.addEventListener('click', function (event){
             event.preventDefault();
@@ -106,9 +108,10 @@ document.addEventListener('DOMContentLoaded', function (event){
 
       }
 
+      // function to handle buying of ticket
       function purchaseTicket(event, filmId) {
         event.preventDefault();
-      
+      // fetching the movie data according to its id
         fetch(`http://localhost:3000/films/${filmId}`)
           .then(response => response.json())
           .then(function (film) {
@@ -122,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function (event){
       
             const updatedTicketsSold = ticketsSold + 1;
       
+            // updating the movie data on the server
             fetch(`http://localhost:3000/films/${filmId}`, {
               method: 'PATCH',
               headers: {
