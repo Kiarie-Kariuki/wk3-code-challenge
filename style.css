@@ -94,3 +94,11 @@ h2 {
     text-align: center;
     margin-top: 20px;
 }
+#img{
+    height: 350px;
+    aspect-ratio: 1/1;
+}
+#image{
+    height: 500px;
+    aspect-ratio: 1/1;
+}
