@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function (event){
             // display the data of the movie on the HTML
             movieDetail.innerHTML = `
               <h3>${film.title}</h3>
-              <img src="${film.poster}" alt="Movie Poster">
+              <img id='image' src="${film.poster}" alt="Movie Poster">
               <p>Runtime: ${film.runtime} minutes</p>
               <p>Showtime: ${film.showtime}</p>
               <p>Tickets Sold: ${film.tickets_sold}</p>
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function (event){
         const availableTickets = film.capacity - film.tickets_sold
         moviesDetail.innerHTML = `
           <h3>${film.title}</h3>
-          <img src="${film.poster}" alt="Movie Poster" class="full-width-image">
+          <img  id='img' src="${film.poster}" alt="Movie Poster" class="full-width-image">
           <p>Runtime: ${film.runtime} minutes</p>
           <p>Showtime: ${film.showtime}</p>
           <p>Tickets Sold: ${film.tickets_sold}</p>
